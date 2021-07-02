@@ -83,7 +83,6 @@ public final class FaceDetectRGBActivity extends AppCompatActivity implements Su
     private Handler handler;
     private FaceDetectThread detectThread = null;
     private int prevSettingWidth;
-    private int prevSettingHeight;
     private android.media.FaceDetector fdet;
 
     private FaceResult faces[];
@@ -330,17 +329,13 @@ public final class FaceDetectRGBActivity extends AppCompatActivity implements Su
          * so calculate the size follow your purpose
          */
         if (previewWidth / 4 > 360) {
-            prevSettingWidth = 360;
-            prevSettingHeight = 270;
+            prevSettingWidth = 400;
         } else if (previewWidth / 4 > 320) {
-            prevSettingWidth = 320;
-            prevSettingHeight = 240;
+            prevSettingWidth = 360;
         } else if (previewWidth / 4 > 240) {
-            prevSettingWidth = 240;
-            prevSettingHeight = 160;
+            prevSettingWidth = 280;
         } else {
-            prevSettingWidth = 160;
-            prevSettingHeight = 120;
+            prevSettingWidth = 200;
         }
 
         cameraParameters.setPreviewSize(previewSize.width, previewSize.height);
